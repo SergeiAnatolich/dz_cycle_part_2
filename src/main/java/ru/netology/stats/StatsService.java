@@ -40,8 +40,9 @@ public class StatsService {
 
     public int calculateMonthUnderAverageSales(double[] sales) {
         int amountMonth = 0;
+        double averageSales = calculateAverageSales(sales);
         for (double sale : sales) {
-            if (sale < calculateAverageSales(sales)) {
+            if (sale < averageSales) {
                 amountMonth++;
             }
         }
@@ -50,8 +51,9 @@ public class StatsService {
 
     public int calculateMonthOverAverageSales(double[] sales) {
         int amountMonth = 0;
+        double averageSales = calculateAverageSales(sales);
         for (double sale : sales) {
-            if (sale > calculateAverageSales(sales)) {
+            if (sale > averageSales) {
                 amountMonth++;
             }
         }
